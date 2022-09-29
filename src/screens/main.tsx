@@ -2,6 +2,8 @@ import React, { useCallback, useState } from "react";
 import { Box, Icon, VStack, useColorModeValue, Fab } from "native-base";
 import TaskList from "../components/tasks-list";
 import shortid from "shortid";
+import Masthead from "../components/masthead";
+import NavBar from "../components/navbar";
 
 const initialData = [
   {
@@ -72,6 +74,9 @@ export default function Main() {
 
   return (
     <Box flex={1} bg={useColorModeValue("warmGray.50", "primary.900")} w="full">
+      <Masthead title="What's up, Wilders!" image={require("../assets/ws.png")}>
+        <NavBar />
+      </Masthead>
       <VStack
         flex={1}
         space={1}

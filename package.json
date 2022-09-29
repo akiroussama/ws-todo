@@ -12,6 +12,7 @@
     "@react-navigation/drawer": "^6.5.0",
     "expo": "~46.0.13",
     "expo-status-bar": "~1.4.0",
+    "moti": "^0.20.0",
     "native-base": "^3.4.17",
     "react": "18.0.0",
     "react-dom": "18.0.0",

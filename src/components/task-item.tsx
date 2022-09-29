@@ -2,20 +2,28 @@ import React from "react";
 import { Text, Pressable, Box, HStack } from "native-base";
 import AnimatedCheckbox from "react-native-checkbox-reanimated";
 
-const TaskItem = () => {
+interface TaskItemProps {
+  isDone: boolean;
+  onToggleCheckbox?: () => void;
+  subject: string;
+}
+
+const TaskItem = (props: TaskItemProps) => {
+  const { isDone, onToggleCheckbox, subject } = props;
+
   return (
     <HStack alignItems="center" w="full">
       <Box width={30} height={50} mr={2}>
-        <Pressable>
+        <Pressable onPress={onToggleCheckbox}>
           <AnimatedCheckbox
             highlightColor="#4444ff"
             checkmarkColor="#ffffff"
             boxOutlineColor="#4444ff"
-            checked={true}
+            checked={isDone}
           />
         </Pressable>
       </Box>
-      <Text>test</Text>
+      <Text>{subject}</Text>
     </HStack>
   );
 };

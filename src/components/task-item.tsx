@@ -13,7 +13,7 @@ import {
 } from "native-base";
 import AnimatedCheckbox from "react-native-checkbox-reanimated";
 
-interface Props {
+interface Props extends Pick<PanGestureHandlerProps, "simultaneousHandlers"> {
   isDone: boolean;
   onToggleCheckbox?: () => void;
   onPressLabel?: () => void;

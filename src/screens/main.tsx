@@ -1,6 +1,5 @@
-import { StatusBar } from "expo-status-bar";
-import { Center } from "native-base";
-import { useState } from "react";
+import React, { useCallback, useState } from "react";
+import { Box, Icon, VStack, useColorModeValue, Fab } from "native-base";
 import TaskList from "../components/tasks-list";
 
 const initialData = [
@@ -33,5 +32,32 @@ const initialData = [
 
 export default function Main() {
   const [data, setData] = useState(initialData);
-  return <TaskList data={data}></TaskList>;
+
+  const handleToggleTaskItem = useCallback(item => {
+    setData(prevData => {
+      const newData = [...prevData];
+      const index = prevData.indexOf(item);
+      newData[index] = {
+        ...item,
+        done: !item.done,
+      };
+      return newData;
+    });
+  }, []);
+
+  return (
+    <Box flex={1} bg={useColorModeValue("warmGray.50", "primary.900")} w="full">
+      <VStack
+        flex={1}
+        space={1}
+        bg={useColorModeValue("warmGray.50", "primary.900")}
+        mt="-20px"
+        borderTopLeftRadius="20px"
+        borderTopRightRadius="20px"
+        pt="20px"
+      >
+        <TaskList data={data} onToggleItem={handleToggleTaskItem} />
+      </VStack>
+    </Box>
+  );
 }

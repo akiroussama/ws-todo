@@ -1,39 +1,40 @@
 import React, { useCallback, useState } from "react";
 import { Box, Icon, VStack, useColorModeValue, Fab } from "native-base";
+import { AntDesign } from "@expo/vector-icons";
+import AnimatedColorBox from "../components/animated-color-box";
 import TaskList from "../components/tasks-list";
 import shortid from "shortid";
 import Masthead from "../components/masthead";
 import NavBar from "../components/navbar";
-
 const initialData = [
   {
-    id: 1,
+    id: shortid.generate(),
     subject: "LiveCo RN: setup & sample to do list",
     done: true,
   },
   {
-    id: 2,
+    id: shortid.generate(),
     subject: "LiveCo RN: todo done interaction + Animations",
     done: false,
   },
   {
-    id: 3,
+    id: shortid.generate(),
     subject: "LiveCo RN: Add/remove todo + Animations",
     done: false,
   },
   {
-    id: 4,
+    id: shortid.generate(),
     subject: "LiveCo RN: About Page",
     done: false,
   },
   {
-    id: 5,
+    id: shortid.generate(),
     subject: "LiveCo RN: Deploy the app",
     done: false,
   },
 ];
 
-export default function Main() {
+export default function MainScreen() {
   const [data, setData] = useState(initialData);
   const [editingItemId, setEditingItemId] = useState<string | null>(null);
 
@@ -96,6 +97,26 @@ export default function Main() {
           editingItemId={editingItemId}
         />
       </VStack>
+      <Fab
+        position="absolute"
+        renderInPortal={false}
+        size="sm"
+        icon={<Icon color="white" as={<AntDesign name="plus" />} size="sm" />}
+        colorScheme={useColorModeValue("blue", "darkBlue")}
+        bg={useColorModeValue("blue.500", "blue.400")}
+        onPress={() => {
+          const id = shortid.generate();
+          setData([
+            {
+              id,
+              subject: "",
+              done: false,
+            },
+            ...data,
+          ]);
+          setEditingItemId(id);
+        }}
+      />
     </Box>
   );
 }

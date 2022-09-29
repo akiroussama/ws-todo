@@ -29,7 +29,7 @@ const initialData = [
   },
 ];
 
-export default function MainScreen() {
+export default function Main() {
   const [data, setData] = useState(initialData);
 
   const handleToggleTaskItem = useCallback(item => {

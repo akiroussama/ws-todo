@@ -1,6 +1,6 @@
 import shortid from 'shortid'
 
-const fakeTasks = [
+export const fakeTasks = [
   {
     id: shortid.generate(),
     subject: 'LiveCo RN: setup & sample to do list',

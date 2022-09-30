@@ -25,6 +25,7 @@ const AboutScrollView = () => {
             colorScheme={item.colorScheme}
           />
         ))}
+        {/* Premier Refactoring de code */}
         {/* <GenericLink
           href="https://github.com/akiroussama/ws-todo"
           title=" Go to the github repository"
@@ -40,6 +41,29 @@ const AboutScrollView = () => {
           title="Wild School"
           colorScheme={useColorModeValue('pink', 'green')}
         /> */}
+        {/*  Première version du code */}
+        {/* <LinkButton
+            colorScheme="red"
+            size="lg"
+            borderRadius="full"
+            href="https://www.youtube.com/devaslife"
+            leftIcon={
+              <Icon as={Feather} name="youtube" size="sm" opacity={0.5} />
+            }
+          >
+            Go to YouTube channel
+          </LinkButton>
+          <LinkButton
+            colorScheme={useColorModeValue('blue', 'darkBlue')}
+            size="lg"
+            borderRadius="full"
+            href="https://twitter.com/inkdrop_app"
+            leftIcon={
+              <Icon as={Feather} name="twitter" size="sm" opacity={0.5} />
+            }
+          >
+            @inkdrop_app
+          </LinkButton> */}
         <GenText title="A React Native mobile app Built with love 💘" />
       </VStack>
     </ScrollView>

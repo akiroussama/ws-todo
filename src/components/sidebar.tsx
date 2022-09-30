@@ -9,10 +9,10 @@ import {
   useColorModeValue
 } from 'native-base'
 import { DrawerContentComponentProps } from '@react-navigation/drawer'
-import AnimatedColorBox from './animated-color-box'
 import ThemeToggle from './theme-toggle'
 import { Feather } from '@expo/vector-icons'
 import MenuButton from './menu-button'
+import { Box } from 'native-base'
 
 const Sidebar = (props: DrawerContentComponentProps) => {
   const { state, navigation } = props
@@ -29,7 +29,7 @@ const Sidebar = (props: DrawerContentComponentProps) => {
   }, [navigation])
 
   return (
-    <AnimatedColorBox
+    <Box
       safeArea
       flex={1}
       bg={useColorModeValue('blue.50', 'darkBlue.800')}
@@ -79,7 +79,7 @@ const Sidebar = (props: DrawerContentComponentProps) => {
       <Center>
         <ThemeToggle />
       </Center>
-    </AnimatedColorBox>
+    </Box>
   )
 }
 

@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react'
-import { Icon, VStack, useColorModeValue, Fab } from 'native-base'
+import { Box, Icon, VStack, useColorModeValue, Fab } from 'native-base'
 import { AntDesign } from '@expo/vector-icons'
-import AnimatedColorBox from '../components/animated-color-box'
 import TaskList from '../components/task-list'
 import shortid from 'shortid'
 import Masthead from '../components/masthead'
@@ -48,11 +47,7 @@ export default function MainScreen() {
   }, [])
 
   return (
-    <AnimatedColorBox
-      flex={1}
-      bg={useColorModeValue('warmGray.50', 'primary.900')}
-      w="full"
-    >
+    <Box flex={1} bg={useColorModeValue('warmGray.50', 'primary.900')} w="full">
       <Masthead
         title="What's up, Wilder's!"
         image={require('../assets/masthead.png')}
@@ -98,6 +93,6 @@ export default function MainScreen() {
           setEditingItemId(id)
         }}
       />
-    </AnimatedColorBox>
+    </Box>
   )
 }

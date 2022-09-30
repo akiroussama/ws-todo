@@ -1,21 +1,12 @@
 import React from 'react'
-import {
-  ScrollView,
-  Box,
-  Text,
-  VStack,
-  Icon,
-  Image,
-  useColorModeValue
-} from 'native-base'
-import AnimatedColorBox from '../components/animated-color-box'
+import { Box, useColorModeValue } from 'native-base'
 import Navbar from '../components/navbar'
 import Masthead from '../components/masthead'
 import AboutScrollView from '../components/about-scrollview'
 
 const AboutScreen = () => {
   return (
-    <AnimatedColorBox
+    <Box
       flex={1}
       bg={useColorModeValue('warmGray.50', 'warmGray.900')}
       w="full"
@@ -27,7 +18,7 @@ const AboutScreen = () => {
         <Navbar />
       </Masthead>
       <AboutScrollView></AboutScrollView>
-    </AnimatedColorBox>
+    </Box>
   )
 }
 

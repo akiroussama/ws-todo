@@ -14,7 +14,7 @@ const ExpoLink = () => {
         <Icon as={Feather} name="external-link" size="sm" opacity={0.5} />
       }
     >
-      https://snack.expo.dev/
+      link of deployment ( snack ? )
     </LinkButton>
   )
 }
